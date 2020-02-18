@@ -1,4 +1,7 @@
 package definition;
 
-public class LinkedList {
+import adt.LinkedListADT;
+
+public class LinkedList<E> implements LinkedListADT<E> {
+
 }
