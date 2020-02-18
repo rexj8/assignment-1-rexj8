@@ -1,8 +1,15 @@
 package main;
 
+import definition.Person;
+
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        Person prn = new Person();
 
         System.out.println("Welcome to Contact List App");
         System.out.println("Press 1 to add a new contact");
