@@ -117,7 +117,13 @@ public class LinkedList<E> implements LinkedListADT<E> {
 
     @Override
     public void print() {
-
+        System.out.print("[");
+        for (int i = 0; i < size; i++) {
+            // fetch the data for the current node
+            E data = this.getNode(i).getData();
+            System.out.print(data + (i < size - 1 ? ", " : ""));
+        }
+        System.out.println("]");
     }
 
     @Override
