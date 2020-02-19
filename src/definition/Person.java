@@ -9,7 +9,7 @@ public class Person implements PersonADT {
     String email;
 
     @Override
-    public void add(String text) {
+    public void add(String fname, String lname) {
 
     }
 

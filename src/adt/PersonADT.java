@@ -2,7 +2,7 @@ package adt;
 
 public interface PersonADT {
 
-    void add(String text);
+    void add(String fname, String lname);
 
     String viewAll();
 
