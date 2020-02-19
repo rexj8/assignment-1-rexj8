@@ -58,10 +58,38 @@ public class LinkedList<E> implements LinkedListADT<E> {
         return response;
     }
 
+    private E removeAfter(Node<E> node) {
+        E response = null;
+        Node<E> temp = node.getNext();
+        if (temp != null) {
+
+            node.next = temp.getNext();
+            size--;
+            response = temp.getData();
+        }
+        return response;
+    }
+
+
+    public E remove(int index) {
+        E response = null;
+        // check for valid index
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException(Integer.toString(index));
+        } else if (index == 0) { /* check if the index is zero*/
+            response = removeFirst();
+        } else {
+            Node<E> previousNode = getNode(index - 1);
+            response = removeAfter(previousNode);
+        }
+        return response;
+    }
+
     @Override
     public E remove() {
-        return null;
+        return remove(size - 1);
     }
+
 
     @Override
     public int search(E item) {
