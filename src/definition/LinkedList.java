@@ -128,7 +128,12 @@ public class LinkedList<E> implements LinkedListADT<E> {
 
     @Override
     public E get(int index) {
-        return null;
+        String data = "";
+        for (int i = 0; i < index + 1; i++) {
+            // fetch the data for the current node
+            data = (String) this.getNode(i).getData();
+        }
+        return (E) data;
     }
 
     private static class Node<E> {
