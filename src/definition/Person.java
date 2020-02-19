@@ -9,8 +9,9 @@ public class Person implements PersonADT {
     String email;
 
     @Override
-    public void add(String fname, String lname) {
-
+    public void addName(String fname, String lname) {
+        this.fname = fname;
+        this.lname = lname;
     }
 
     @Override

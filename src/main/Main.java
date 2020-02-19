@@ -27,7 +27,7 @@ public class Main {
             String fname = sc.next();
             System.out.print("Last Name:");
             String lname = sc.next();
-            prsn.add(fname, lname);
+            prsn.addName(fname, lname);
 
         }
 
