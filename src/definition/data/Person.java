@@ -9,6 +9,7 @@ public class Person implements PersonADT {
     LinkedList<String> linkedListLName = new LinkedList<>();
     LinkedList<String> linkedListEMail = new LinkedList<>();
     LinkedList<String> linkedListCTNo = new LinkedList<>();
+    public static LinkedList<Integer> linkedListCount = new LinkedList<>();
     String fname;
     String lname;
     String email;
@@ -35,6 +36,7 @@ public class Person implements PersonADT {
     }
 
     public static int count(int count) {
+        linkedListCount.add(count);
         return count;
     }
 
