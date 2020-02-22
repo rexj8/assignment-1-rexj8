@@ -8,6 +8,7 @@ public class Person implements PersonADT {
     LinkedList<String> linkedListFName = new LinkedList<>();
     LinkedList<String> linkedListLName = new LinkedList<>();
     LinkedList<String> linkedListEMail = new LinkedList<>();
+    LinkedList<String> linkedListCTNo = new LinkedList<>();
     String fname;
     String lname;
     String email;
@@ -26,6 +27,10 @@ public class Person implements PersonADT {
         this.email = email;
 
         linkedListEMail.add(email);
+    }
+
+    public void addCTNo(String number) {
+        linkedListCTNo.add(number);
     }
 
     @Override

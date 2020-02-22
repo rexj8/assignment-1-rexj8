@@ -28,6 +28,18 @@ public class Main {
             System.out.print("Last Name:");
             String lname = sc.next();
             prsn.addName(fname, lname);
+            System.out.println("Contact number: ");
+            String ctno = sc.next();
+
+            while (true) {
+                System.out.print("Would you like to add another contact number? (y/n): ");
+
+                if (sc.next() == "n") break;
+
+                else {
+
+                }
+            }
 
         }
 
