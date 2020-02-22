@@ -12,6 +12,7 @@ public class Person implements PersonADT {
     String fname;
     String lname;
     String email;
+    int count;
 
     @Override
     public void addName(String fname, String lname) {
@@ -31,6 +32,10 @@ public class Person implements PersonADT {
 
     public void addCTNo(String number) {
         linkedListCTNo.add(number);
+    }
+
+    public static int count(int count) {
+        return count;
     }
 
     @Override

@@ -28,17 +28,22 @@ public class Main {
             System.out.print("Last Name:");
             String lname = sc.next();
             prsn.addName(fname, lname);
-            System.out.println("Contact number: ");
+            System.out.print("Contact number: ");
             String ctno = sc.next();
+            prsn.addCTNo(ctno);
 
+            int count = 0;
             while (true) {
                 System.out.print("Would you like to add another contact number? (y/n): ");
 
                 if (sc.next() == "n") break;
 
-                else {
-
-                }
+                else if (sc.next() == "y") {
+                    count++;
+                    System.out.print("Contact number: ");
+                    String number = sc.next();
+                    prsn.addCTNo(ctno);
+                } else System.out.println("Wrong Input!!");
             }
 
         }
