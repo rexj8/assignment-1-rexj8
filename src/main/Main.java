@@ -1,6 +1,6 @@
 package main;
 
-import definition.Person;
+import definition.data.Person;
 
 import java.util.Scanner;
 

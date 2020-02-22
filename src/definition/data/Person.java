@@ -1,11 +1,13 @@
-package definition;
+package definition.data;
 
 import adt.PersonADT;
+import definition.LinkedList;
 
 public class Person implements PersonADT {
     LinkedList<String> ls = new LinkedList<>();
     LinkedList<String> linkedListFName = new LinkedList<>();
     LinkedList<String> linkedListLName = new LinkedList<>();
+    LinkedList<String> linkedListEMail = new LinkedList<>();
     String fname;
     String lname;
     String email;
@@ -16,7 +18,14 @@ public class Person implements PersonADT {
         this.fname = fname;
         this.lname = lname;
 
-//        linkedListFName.add(fname);
+        linkedListFName.add(fname);
+        linkedListLName.add(lname);
+    }
+
+    public void addEMail(String email) {
+        this.email = email;
+
+        linkedListEMail.add(email);
     }
 
     @Override
