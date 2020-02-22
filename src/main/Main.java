@@ -23,11 +23,15 @@ public class Main {
         if (inpMenu == 1) {
             System.out.println("You have chosen to add a new contact:");
             System.out.println("Please enter the name of the Person");
+
             System.out.print("First Name:");
             String fname = sc.next();
+
             System.out.print("Last Name:");
             String lname = sc.next();
+
             prsn.addName(fname, lname);
+
             System.out.print("Contact number: ");
             String ctno = sc.next();
             prsn.addCTNo(ctno);
@@ -44,8 +48,15 @@ public class Main {
                     String number = sc.next();
                     prsn.addCTNo(ctno);
                 } else System.out.println("Wrong Input!!");
+                prsn.count(count);
             }
 
+            System.out.print("Would you like to add email address? (y/n): ");
+            if (sc.next() == "y") {
+                prsn.addEMail(sc.next());
+            } else if (sc.next() == "n") {
+                prsn.addEMail("0");
+            }
         }
 
 
