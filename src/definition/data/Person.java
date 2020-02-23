@@ -4,11 +4,11 @@ import adt.PersonADT;
 import definition.LinkedList;
 
 public class Person implements PersonADT {
-    LinkedList<String> ls = new LinkedList<>();
-    LinkedList<String> linkedListFName = new LinkedList<>();
-    LinkedList<String> linkedListLName = new LinkedList<>();
-    LinkedList<String> linkedListEMail = new LinkedList<>();
-    LinkedList<String> linkedListCTNo = new LinkedList<>();
+    public static LinkedList<String> ls = new LinkedList<>();
+    public static LinkedList<String> linkedListFName = new LinkedList<>();
+    public static LinkedList<String> linkedListLName = new LinkedList<>();
+    public static LinkedList<String> linkedListEMail = new LinkedList<>();
+    public static LinkedList<String> linkedListCTNo = new LinkedList<>();
     public static LinkedList<Integer> linkedListCount = new LinkedList<>();
     String fname;
     String lname;

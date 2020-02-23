@@ -2,6 +2,7 @@ package main;
 
 import definition.data.Person;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
@@ -10,6 +11,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         Person prsn = new Person();
+        LinkedList<String> linkedList = new LinkedList<>();
 
         System.out.println("Welcome to Contact List App");
         System.out.println("Press 1 to add a new contact");
@@ -38,27 +40,37 @@ public class Main {
 
             int count = 0;
             while (true) {
-                System.out.print("Would you like to add another contact number? (y/n): ");
+                System.out.println("Would you like to add another contact number? (1/0):");
+                int inp = sc.nextInt();
 
-                if (sc.next() == "n") break;
+                if (inp == 0) break;
 
-                else if (sc.next() == "y") {
+                else if (inp == 1) {
                     count++;
                     System.out.print("Contact number: ");
                     String number = sc.next();
                     prsn.addCTNo(ctno);
                 } else System.out.println("Wrong Input!!");
+
                 prsn.count(count);
             }
 
             System.out.print("Would you like to add email address? (y/n): ");
-            if (sc.next() == "y") {
+            String inp = sc.next();
+            if (inp == "y") {
                 prsn.addEMail(sc.next());
-            } else if (sc.next() == "n") {
+            } else if (inp == "n") {
                 prsn.addEMail("0");
             }
-        }
+        } else if (inpMenu == 2) {
 
+        } else if (inpMenu == 3) {
+
+        } else if (inpMenu == 4) {
+
+        } else if (inpMenu == 5) {
+            System.exit(0);
+        }
 
     }
 }
