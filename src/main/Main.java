@@ -1,76 +1,102 @@
 package main;
 
-import definition.data.Person;
+import definition.LinkedList;
+import definition.Name;
+import definition.PhoneNumber;
 
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
+        Name nm = new Name();
+        PhoneNumber phoneNumber = new PhoneNumber();
         Scanner sc = new Scanner(System.in);
-        Person prsn = new Person();
-        LinkedList<String> linkedList = new LinkedList<>();
+        LinkedList<String> linkedListName = new LinkedList<String>();
+        LinkedList<String> linkedListNumber = new LinkedList<String>();
 
-        System.out.println("Welcome to Contact List App");
-        System.out.println("Press 1 to add a new contact");
-        System.out.println("Press 2 to view all contact");
-        System.out.println("Press 3 to search for a contact");
-        System.out.println("Press 4 to delete a contact");
-        System.out.println("Press 5 to exit a program");
+//        System.out.println();
+//        System.out.println("_______________Contacts_Manager_______________\n");
+//        System.out.println("================");
+//        System.out.println("   LOGIN MENU   ");
+//        System.out.println("================");
+//
+//        System.out.println("Enter Login ID");
+//        String lgnID = sc.nextLine().toLowerCase();
+//        System.out.println("Enter Login Password :-");
+//        String lgnPswrd = sc.nextLine();
+//
+//        if (lgn.checkID(lgnID) && lgn.checkPswrd(lgnPswrd)) {
+        System.out.println("                        Welcome Sir!");
 
-        int inpMenu = sc.nextInt();
+        while (true) {
+            System.out.println("\n===============");
+            System.out.println("   MAIN MENU   ");
+            System.out.println("===============");
+            System.out.println("1. SHOW Contacts list");
+            System.out.println("2. ADD Contacts");
+            System.out.println("3. REMOVE Contacts");
+            System.out.println("4. Search Contacts");
+            System.out.println("5. EXIT");
 
-        if (inpMenu == 1) {
-            System.out.println("You have chosen to add a new contact:");
-            System.out.println("Please enter the name of the Person");
+            int inpMENU = sc.nextInt();
 
-            System.out.print("First Name:");
-            String fname = sc.next();
+            if (inpMENU == 1) {
+                linkedListName = nm.getFromDB();
+                linkedListNumber = phoneNumber.getFromDB();
 
-            System.out.print("Last Name:");
-            String lname = sc.next();
+                int i = 0;
+                while (i < linkedListName.size) {
+                    System.out.println(linkedListName.get(i) + "   " + linkedListNumber.get(i));
+                    i++;
+                }
+                System.out.println("\nTotal Contacts :- " + linkedListName.size);
+            } else if (inpMENU == 2) {
+                System.out.println("Enter a NAME :-");
+                String name = sc.next();
+                nm.addIntoDB(name);
 
-            prsn.addName(fname, lname);
+                System.out.println("Enter Number :-");
+                String number = sc.next();
+                phoneNumber.addIntoDB(number, name);
+            } else if (inpMENU == 3) {
+                System.out.println("Enter contact name which you have to REMOVE :-");
+                String removeName = sc.next();
+                nm.delFromDB(removeName);
+            } else if (inpMENU == 4) {
 
-            System.out.print("Contact number: ");
-            String ctno = sc.next();
-            prsn.addCTNo(ctno);
+                System.out.println("Search Text :-");
+                String text = sc.next();
+                System.out.println();
 
-            int count = 0;
-            while (true) {
-                System.out.println("Would you like to add another contact number? (1/0):");
-                int inp = sc.nextInt();
+                linkedListName = nm.getFromDB();
+                linkedListNumber = phoneNumber.getFromDB();
 
-                if (inp == 0) break;
+                int i = 0;
+                int count = 0;
+                String strtemp;
+                while (i < linkedListName.size) {
+                    strtemp = linkedListName.get(i) + "   " + linkedListNumber.get(i);
 
-                else if (inp == 1) {
-                    count++;
-                    System.out.print("Contact number: ");
-                    String number = sc.next();
-                    prsn.addCTNo(ctno);
-                } else System.out.println("Wrong Input!!");
+                    if (strtemp.indexOf(text) != -1) {
+                        count += 1;
+                        System.out.println(strtemp);
+                    }
+                    i++;
+                }
+                System.out.println("\n" + count + " results Found");
 
-                prsn.count(count);
+            } else if (inpMENU == 5) {
+                System.exit(0);
             }
 
-            System.out.print("Would you like to add email address? (y/n): ");
-            String inp = sc.next();
-            if (inp == "y") {
-                prsn.addEMail(sc.next());
-            } else if (inp == "n") {
-                prsn.addEMail("0");
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        } else if (inpMenu == 2) {
-
-        } else if (inpMenu == 3) {
-
-        } else if (inpMenu == 4) {
-
-        } else if (inpMenu == 5) {
-            System.exit(0);
         }
-
     }
+
+//    }else{System.out.println("Enter valid input!!");}
 }
